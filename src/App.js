@@ -6,7 +6,6 @@ import Home from './page/home/Home';
 import About from './page/login/About';
 import Posts from './page/login/Posts';
 import NotFound from './page/login/404';
-import FileProcessing from './page/login/FileProcessing';
 import Login from './page/login/Login'; 
 import Protected from './page/components/Protected'
 import Register from './page/login/Register';
@@ -36,7 +35,6 @@ function App() {
               </Protected>
             }
           />
-          <Route path="/file-processing" element={<FileProcessing />} />
 
           <Route
             path="/login"

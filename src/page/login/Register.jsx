@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { Container, Row, Col, Form, Button, Card } from "react-bootstrap";
+import { Nav, Navbar, Row, Col, Form, Button, Card } from "react-bootstrap";
 import axios from "axios";
 // import GoogleLogin from "../components/GoogleLogin";
 
@@ -66,6 +66,9 @@ const Register = ({ token, setToken }) => {
                     <Col>
                         {!token ? (
                             <>
+                            <Nav className="">
+                              <Navbar.Brand className="mb-3"><h4>Create Account</h4></Navbar.Brand>
+                            </Nav>
                             {/* <GoogleLogin
                                 setToken={setToken}
                                 label="Register with Google"
@@ -73,7 +76,6 @@ const Register = ({ token, setToken }) => {
 
                             <Form onSubmit={handleSubmit}>
                                 <Form.Group className="mb-3" controlId="formBasicEmail">
-                                <Form.Label>Email address</Form.Label>
                                 <Form.Control
                                     type="email"
                                     placeholder="Enter email"
@@ -81,13 +83,9 @@ const Register = ({ token, setToken }) => {
                                     onChange={(e) => setEmail(e.target.value)}
                                     required
                                 />
-                                <Form.Text className="text-muted">
-                                    We'll never share your email with anyone else.
-                                </Form.Text>
                                 </Form.Group>
 
                                 <Form.Group className="mb-3" controlId="c">
-                                <Form.Label>First Name</Form.Label>
                                 <Form.Control
                                     type="input"
                                     placeholder="Enter First Name"
@@ -98,7 +96,6 @@ const Register = ({ token, setToken }) => {
                                 </Form.Group>
 
                                 <Form.Group className="mb-3" controlId="c">
-                                <Form.Label>Last Name</Form.Label>
                                 <Form.Control
                                     type="input"
                                     placeholder="Enter Last Name"
@@ -109,7 +106,6 @@ const Register = ({ token, setToken }) => {
                                 </Form.Group>
 
                                 <Form.Group className="mb-3" controlId="formBasicPassword">
-                                <Form.Label>Password</Form.Label>
                                 <Form.Control
                                     type="password"
                                     placeholder="Password"
@@ -119,11 +115,9 @@ const Register = ({ token, setToken }) => {
                                 />
                                 </Form.Group>
 
-                                <div className="d-grid gap-2">
-                                <Button variant="primary" size="lg" type="submit">
-                                    Submit
+                                <Button variant="danger" type="submit">
+                                    Register Now
                                 </Button>
-                                </div>
                             </Form>
                             </>
                         ) : (

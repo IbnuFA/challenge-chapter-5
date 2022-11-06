@@ -1,7 +1,7 @@
 import React, { useState, UseNavigate } from "react";
 import axios from "axios";
 
-import { Container, Row, Col, Form, Button, Card } from "react-bootstrap";
+import { Nav, Navbar, Row, Col, Form, Button, Card } from "react-bootstrap";
 import "../style/landingPage.css"
 import { useNavigate } from "react-router-dom";
 
@@ -60,10 +60,12 @@ const Login = ({ token, setToken }) => {
                     <Col>
                     {!token ? (
                         <>
+                        <Nav className="">
+                          <Navbar.Brand className="mb-3"><h4>Log in to your Account</h4></Navbar.Brand>
+                        </Nav>
                         {/* <GoogleLogin setToken={setToken} label="Login with Google" /> */}
                         <Form onSubmit={handleSubmit}>
                             <Form.Group className="mb-3" controlId="formBasicEmail">
-                            <Form.Label>Email address</Form.Label>
                             <Form.Control
                                 type="email"
                                 placeholder="Enter email"
@@ -71,13 +73,9 @@ const Login = ({ token, setToken }) => {
                                 onChange={(e) => setEmail(e.target.value)}
                                 required
                             />
-                            <Form.Text className="text-muted">
-                                We'll never share your email with anyone else.
-                            </Form.Text>
                             </Form.Group>
 
                             <Form.Group className="mb-3" controlId="formBasicPassword">
-                            <Form.Label>Password</Form.Label>
                             <Form.Control
                                 type="password"
                                 placeholder="Password"
@@ -87,11 +85,9 @@ const Login = ({ token, setToken }) => {
                             />
                             </Form.Group>
 
-                            <div className="d-grid gap-2">
-                            <Button variant="primary" size="lg" type="submit">
-                                Submit
+                            <Button variant="danger"  type="submit">
+                                Login
                             </Button>
-                            </div>
                         </Form>
                         </>
                     ) : (
